@@ -20,7 +20,7 @@ while (!isRunningProgram)
     System.Console.WriteLine($"[M]ultiply");
     System.Console.WriteLine($"[D]ivide");
     System.Console.WriteLine($"[E]xit");
-    string selectedOption = Console.ReadLine().ToLower();
+    string selectedOption = Console.ReadLine();
 
     // create logical selected option
     int result;
@@ -28,36 +28,36 @@ while (!isRunningProgram)
     {
         System.Console.WriteLine("Invalid input");
     }
-    else if (selectedOption == "a")
+    else if (selectedOption == "a" || selectedOption == "A")
     {
         result = AddEquation(firstNumber, secondNumber);
         PrintTextEquation(firstNumber, "+", secondNumber, result);
     }
-    else if (selectedOption == "s")
+    else if (selectedOption == "s" || selectedOption == "S")
     {
         result = SubtractEquation(firstNumber, secondNumber);
         PrintTextEquation(firstNumber, "-", secondNumber, result);
     }
-    else if (selectedOption == "m")
+    else if (selectedOption == "m" || selectedOption == "M")
     {
         result = MultiplyEquation(firstNumber, secondNumber);
         PrintTextEquation(firstNumber, "*", secondNumber, result);
     }
-    else if (selectedOption == "d")
+    else if (selectedOption == "d" || selectedOption == "D")
     {
         result = DivideEquation(firstNumber, secondNumber);
         PrintTextEquation(firstNumber, "/", secondNumber, result);
     }
-    else if (selectedOption == "e")
+    else if (selectedOption == "e" || selectedOption == "E")
     {
         System.Console.WriteLine($"Want to Exit? Good Bye :)");
         isRunningProgram = true;
     }
     else
     {
-        System.Console.WriteLine("${Invalid Input}");
+        System.Console.WriteLine("${Invalid Input.}");
     }
-    System.Console.WriteLine("Press any key to continue previous action");
+    System.Console.WriteLine("Press any key to continue previous action.");
     Console.ReadKey();
 }
 
