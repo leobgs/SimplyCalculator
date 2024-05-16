@@ -28,27 +28,27 @@ while (!isRunningProgram)
     {
         System.Console.WriteLine("Invalid input");
     }
-    else if (selectedOption == "a" || selectedOption == "A")
+    else if (EqualCaseSensitiveInput(selectedOption, "A"))
     {
         result = AddEquation(firstNumber, secondNumber);
         PrintTextEquation(firstNumber, "+", secondNumber, result);
     }
-    else if (selectedOption == "s" || selectedOption == "S")
+    else if (EqualCaseSensitiveInput(selectedOption, "S"))
     {
         result = SubtractEquation(firstNumber, secondNumber);
         PrintTextEquation(firstNumber, "-", secondNumber, result);
     }
-    else if (selectedOption == "m" || selectedOption == "M")
+    else if (EqualCaseSensitiveInput(selectedOption, "M"))
     {
         result = MultiplyEquation(firstNumber, secondNumber);
         PrintTextEquation(firstNumber, "*", secondNumber, result);
     }
-    else if (selectedOption == "d" || selectedOption == "D")
+    else if (EqualCaseSensitiveInput(selectedOption, "D"))
     {
         result = DivideEquation(firstNumber, secondNumber);
         PrintTextEquation(firstNumber, "/", secondNumber, result);
     }
-    else if (selectedOption == "e" || selectedOption == "E")
+    else if (EqualCaseSensitiveInput(selectedOption, "E"))
     {
         System.Console.WriteLine($"Want to Exit? Good Bye :)");
         isRunningProgram = true;
@@ -71,4 +71,10 @@ static int DivideEquation(int number1, int number2) => number1 / number2;
 void PrintTextEquation(int number1, string @operator, int number2, int result1)
 {
     System.Console.WriteLine($"The result {number1} {@operator} {number2} = {result1}");
+}
+
+// create method equal case sensitive user input
+bool EqualCaseSensitiveInput(string inputLeft, string inputRight)
+{
+    return inputLeft.ToLower() == inputRight.ToLower();
 }
